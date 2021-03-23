@@ -1,0 +1,12 @@
+<div class="content" fxFlexFill>
+    <mat-toolbar class="toolbar">
+        <span>Project</span>
+        <span class="toolbar-spacer"></span>
+        <button mat-flat-button (click)="logout()">
+            Logout
+        </button>
+    </mat-toolbar>
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="p-1">
+    <span>
+        <button mat-mini-fab color="primary">
+            <mat-icon>{{ !id ? "add" : "edit" }}</mat-icon>
+        </button>
+    </span>
+    <span class="label"> {{ !id ? "New" : "Edit" }} User</span>
+</div>
+<div class="p-1">
+    <mat-card class="p-2">
+        <mat-card-content class="p-2">
+            <form id="userForm" [formGroup]="userForm">
+                <div fxLayout="row wrap">
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>User Code</mat-label>
+                            <input matInput placeholder="User Code" formControlName="userCode" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>First Name</mat-label>
+                            <input matInput placeholder="First Name" formControlName="firstName" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Last Name" formControlName="lastName" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Date of Birth"
+                                formControlName="dob" required>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="Phone Number" appNumbersOnly formControlName="phoneNumber" maxlength="10" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
+                    <button mat-flat-button color="primary" (click)="submitUser()" [disabled]="!userForm.valid">
+                        <mat-icon>{{ !id ? "add" : "save" }} </mat-icon> {{ !id ? "Add" : "Save" }}
+                    </button>
+                    <button mat-flat-button color="warn" [routerLink]="['/user/list']">Cancel</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

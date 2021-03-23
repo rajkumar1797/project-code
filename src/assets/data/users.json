@@ -1,0 +1,4 @@
+[
+    {"userId": 1,"userCode": "U01","firstName":"raj","lastName":"kumar","dob":"03/17/1996","email":"raj@gmail.com","phoneNumber":"9787757372"},
+    {"userId": 2,"userCode": "U02","firstName":"ajay","lastName":"kumar","dob":"06/17/1996","email":"ajay@gmail.com","phoneNumber":"9787778853"}
+]
